@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>IMDb API Webapp - My App</title>
+  
+  <link rel="shortcut icon" href="http://d15dxvojnvxp1x.cloudfront.net/assets/favicon.ico">
+  <link rel="icon" href="http://d15dxvojnvxp1x.cloudfront.net/assets/favicon.ico">
+  <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="w">
+    <h1>IMDb Mini-Webapp</h1>
+    
+    
+    <p class="desc">Select a TV show to display some related information.</p>
+    
+    <nav id="tvnav">
+      <ul class="clearfix">
+        <li><a href="#" id="The Matrix">The Matrix</a></li>
+        <li><a href="#" id="Horrible Bosses">Horrible Bosses</a></li>
+        <li><a href="#" id="South Park">South Park</a></li>
+        <li><a href="#" id="Dirty Dancing">Dirty Dancing</a></li>
+        <li><a href="#" id="Wild at Heart">Wild at Heart</a></li>
+      </ul>
+    <input type="text" name="q" id="q" /><input type="submit" name="button" id="button" value="Submit" />
+    </nav>
+    
+    <div id="imdbcontents" class="clearfix"></div>
+
+  <!-- random number -->
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+  
+  </div>
+
+<script type="text/javascript">
+
+$(function(){
+  
+  // $('#tvnav ul li a').on('click', function(e){
+  $('input#button').on('click', function(e){  
+    e.preventDefault();
+
+    // Code for Picking a Random Array Value
+    var myShows = ['Fifty Shades of Grey', 'Big Hero 6', 'John Wick', 'The Interview', 'Guardians of the Galaxy', 'The Grand Budapest Hotel ', 'Sherlock', 'Edge of Tomorrow'];
+     // var randomValue = myArray[Math.floor(Math.random() * myArray.length)]; 
+    var show = myShows[Math.floor(Math.random() * myShows.length)];
+    console.log(show);
+
+
+
+    // Click method 
+    // var imdbid  = $(this).attr('id');
+    
+    // search input field method
+    // var imdbid  = $('input#q').val();
+    
+    // select from a random array method
+    var imdbid  = show;
+
+    var resturl = "http://imdb.wemakesites.net/api/1.0/get/title/";
+    
+    $('#imdbcontents').html('<center><img src="images/loading.gif" alt="loading..."></center>');
+    
+    $.ajax({
+      url: resturl,
+      data: {
+        q: imdbid,
+      },
+      dataType: 'jsonp',
+      crossDomain: true,
+      success: function(data){
+        var title  = data.data.title;
+        var genre  = data.data.genres[0];
+        var poster = data.data.poster;
+        var imdburl = data.data.imdbUrl;
+        var plot   = data.data.description;
+        var rlseyr = data.data.year;
+        var url = "http://www.imdb.com/"+ imdburl;
+
+        var cdiv = $('#imdbcontents');
+        
+        var thehtml = "<img src=\""+poster+"\" class=\"floatright\">";
+        thehtml = thehtml + "<h2>"+title+"</h2>";
+        thehtml = thehtml + "<p class=\"genre\">"+genre+" - first aired in "+rlseyr+"</p>";
+        thehtml = thehtml + "<p>"+plot+"</p>";
+        thehtml = thehtml + "<p><a href=\""+url+"\" target=\"_blank\">View on IMDb &rarr;</p>";
+        
+        cdiv.html(thehtml);
+        // console.log(url)
+      }
+    });
+  });
+
+
+function shuffle(array) {
+  //var yearrr = rlseyr;
+  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+var arr = [1980, 1985, 1990, 1982];
+arr.push("2005");
+
+shuffle(arr);
+console.log(arr);
+
+
+});
+
+// $.ajax({
+//     url: "http://imdb.wemakesites.net/api/1.0/get/title/",
+//     data: {
+//         q: "Wild at Heart"
+//     },
+//     dataType: "jsonp",
+//     crossDomain: true,
+//     success: function(data) {
+//         console.log(data);
+//         var title = data.data.title;
+//         var poster = data.data.poster;
+//         var plot   = data.data.description;
+//         var rlseyr = data.data.year;
+//         console.log(rlseyr);
+//     }
+// });
+
+// </script>  
+
+
+<script>
+
+</script>
+
+
+
+
+
+<script>
+function myFunction() {
+    var x = Math.floor((Math.random() * 9) + 1);
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+
+
+</body>
+</html>
