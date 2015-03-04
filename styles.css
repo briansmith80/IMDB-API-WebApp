@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=The+Girl+Next+Door);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -17,13 +17,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 html { overflow-y: scroll; }
 body { 
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 62.5%; 
   line-height: 1;
   margin-bottom: 35px;
   margin-top: 20px;
   color: #555;
-  background: #fff url('images/tree_bark.png'); /* http://subtlepatterns.com/tree-bark/ */
+  background: #fff; /* http://subtlepatterns.com/tree-bark/ */
 }
 
 br { display: block; line-height: 1.6em; } 
@@ -52,13 +52,14 @@ a { color: #3d6abc; }
 a:hover { color: #6387c7; }
 
 h1 {
-  font-family: 'The Girl Next Door', Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #373737;
-  font-size: 4.6em;
+  font-size: 30px;
   line-height: 100px;
   text-align: center;
   margin-bottom: 15px;
-  background: url('images/imdb.png') top right no-repeat;
+  /* background: url('images/imdb.png') top right no-repeat; */
+  font-weight: 700;
 }
 
 h2 {
@@ -83,9 +84,9 @@ p.genre { font-size: 1.2em; color: #777; font-style: italic; margin-bottom: 20px
   margin: 0 auto;
   padding: 12px;
   background: #fff;
-  -webkit-box-shadow: 1px 2px 1px rgba(0,0,0,0.35);
+/*  -webkit-box-shadow: 1px 2px 1px rgba(0,0,0,0.35);
   -moz-box-shadow: 1px 2px 1px rgba(0,0,0,0.35);
-  box-shadow: 1px 2px 1px rgba(0,0,0,0.35);
+  box-shadow: 1px 2px 1px rgba(0,0,0,0.35);*/
 }
 
 #tvnav {
