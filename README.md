@@ -2,6 +2,6 @@
 HTML5 / JavaScript Mobile Game using RESTful API 
 // This was a file for testing some scripts needed. 
 <br>
-Please note that this is not a project but more a testing puroses // this project is not complete and API no longer works.
+Please note that this is not a project but more for testing puroses // project is not complete and API no longer works.
 
 N.B API NO LONGER WORKS!  
