@@ -1,6 +1,7 @@
 # IMDB-API-WebApp
 HTML5 / JavaScript Mobile Game using RESTful API 
+// This was a file for testing some script needed. 
 <br>
-Please note that this is a work in progress and that this project is not complete.
+Please note that this is not a project but more a testing puroses // this project is not complete and API no longer works.
 
-NO :ONGER WORKING!!!!!!!!
+N.B API NO LONGER WORKS!  
